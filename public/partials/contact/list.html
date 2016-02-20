@@ -1,0 +1,39 @@
+<div class="form-horizontal ng-scope" ng-keypress="enter($event)">
+	<div class="form-group">
+		<div class="col-md-4">
+			<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon1">Filter</span>
+			  <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="filter" ng-disabled="contacts.length === 0" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th class="col-md-1">#</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="contact in contacts | filter: filter">
+			<td>{{ contact.name }}</td>
+			<td>{{ contact.email }}</td>
+			<td>
+				<a href="#/contacts/{{ contact._id }}" class="btn btn-xs btn-default" title="Select contact">
+					<i class="glyphicon glyphicon-search"></i>
+				</a>
+				<button class="btn btn-xs btn-warning" ng-click="remove(contact)" title="Remove contact">
+					<i class="glyphicon glyphicon-trash"></i>
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" ng-if="contacts.length === 0">Contacts not found.</td>
+		</tr>
+	</tbody>
+</table>
+
+<a href="#/contacts/new" class="btn btn-primary">New</a>

@@ -1,0 +1,27 @@
+{
+  "name": "contatooh",
+  "description": "Project based in MEAN Fullstack (book from Casa do Codigo)",
+  "main": "server.js",
+  "authors": [
+    "Wender Freese"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.0",
+    "angular-route": "1.5.0",
+    "angular-resource": "1.5.0",
+    "jquery": "~2.2.0",
+    "alertify.js": "alertifyjs#~1.0.8"
+  }
+}
