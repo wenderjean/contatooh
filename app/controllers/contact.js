@@ -1,48 +1,59 @@
-module.exports = function() {
-  var controller = {};
-  var contacts = [
-    { _id: 1, name: 'Contact One', email: 'one@cooh.com' },
-    { _id: 2, name: 'Contact Two', email: 'two@cooh.com' },
-    { _id: 3, name: 'Contact Three', email: 'three@cooh.com' }
-  ];
+var sanitize = require('mongo-sanitize');
 
-  var save = function(contact) {
-    contact._id = contacts.length + 1;
-    contacts.push(contact);
+module.exports = function(app) {
+  var controller = {};
+  var Contact = app.models.contact;
+
+  var save = function(contact, response) {
+    Contact.create(contact).then(function(returned) {
+      response.status(201).json(returned);
+    }, function(err) {
+      console.error(err);
+      response.status(500).json(err);
+    });
   };
 
-  var update = function(updated) {
-    contacts = contacts.map(function(contact) {
-      return contact._id == updated._id ? updated : contact;
-    });
+  var update = function(updated, response) {
+    Contact.findByIdAndUpdate(updated._id, updated).exec()
+      .then(function(returned) {
+        response.json(updated);
+      }, function(err) {
+        console.error(err);
+        response.status(500).json(err);
+      });
   };
 
   controller.saveOrUpdate = function(request, response) {
-    var contact = request.body._id ? update(request.body) : save(request.body);
-    response.json(contact);
+    request.body._id ? update(request.body, response) : save(request.body, response);
   };
 
   controller.delete = function(request, response) {
-    var _id = request.params.id;
-
-    contacts = contacts.filter(function(contact) {
-      return contact._id != _id;
-    });
-
-    response.status(204).end();
+    var _id = { "_id": sanitize(request.params.id) };
+    Contact.remove(_id).exec().then(function() { response.end(); }, function(err) { console.error(err); });
   };
 
   controller.list = function(request, response) {
-    response.json(contacts);
+    Contact.find()
+      .populate('emergency')
+      .exec()
+      .then(function(contacts) {
+        response.json(contacts); 
+      }, function(err) {
+        console.error(err);
+        response.status(500).json(err);
+      });
   };
 
   controller.get = function(request, response) {
     var _id = request.params.id;
-    var _contact = contacts.filter(function(contact) {
-      return contact._id == _id;
-    })[0];
 
-    _contact ? response.json(_contact) : response.status(404).send('Not Found');
+    Contact.findById(_id).exec()
+      .then(function(contact) {
+        response.json(contact);
+      }, function(err) {
+        console.error(err);
+        response.status(404).json(err);
+      });
   };
 
   return controller;

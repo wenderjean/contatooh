@@ -2,7 +2,8 @@
 
 module.exports = function() {
 	angular.module('app.controllers', [])
-		.controller('SiteController', require('./controllers/site-controller'))
+		.controller('ApplicationController', require('./controllers/application-controller'))
+		.controller('AuthenticationController', require('./controllers/authentication-controller'))
 		.controller('ContactControllerList', require('./controllers/contact-controller').list)
 		.controller('ContactControllerForm', require('./controllers/contact-controller').form);
 };

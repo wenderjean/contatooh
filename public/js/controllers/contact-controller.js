@@ -27,6 +27,7 @@ var ContactController = {
 
 		(function() {
 			$scope.contact = new Contact();
+			$scope.contacts = Contact.query();
 
 			if(_id) {
 				Contact.get({ _id: _id }, function(contact) {
@@ -36,6 +37,7 @@ var ContactController = {
 		})();
 
 		$scope.save = function() {
+			$scope.contact.emergency == $scope.contact.emergency || null;
 			$scope.contact.$save(function(contact, response) {
 				alertify.success('Ok');
 			});
