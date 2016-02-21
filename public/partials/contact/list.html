@@ -22,7 +22,7 @@
 		<tr ng-repeat="contact in contacts | filter: filter | orderBy:'name'">
 			<td>{{ contact.name }}</td>
 			<td>{{ contact.email }}</td>
-			<td>{{ contact.emergency.name }}</td>
+			<td>{{ contact.emergency.name || '-' }}</td>
 			<td>
 				<a href="#/contacts/{{ contact._id }}" class="btn btn-xs btn-default" title="Select contact">
 					<i class="glyphicon glyphicon-search"></i>

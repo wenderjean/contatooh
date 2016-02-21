@@ -5,11 +5,19 @@ module.exports = function(app) {
   var Contact = app.models.contact;
 
   var save = function(contact, response) {
-    Contact.create(contact).then(function(returned) {
-      response.status(201).json(returned);
-    }, function(err) {
-      console.error(err);
-      response.status(500).json(err);
+    Contact.find({ email: contact.email }).exec()
+      .then(function(result) {
+        if(result && result.length > 0) {
+          response.status(500).json("This email has already been saved.");  
+          return;
+        }
+
+        Contact.create(contact).then(function(returned) {
+          response.status(201).json(returned);
+        }, function(err) {
+          console.error(err);
+          response.status(500).json(err);
+        });
     });
   };
 

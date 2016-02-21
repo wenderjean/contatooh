@@ -40,6 +40,9 @@ var ContactController = {
 			$scope.contact.emergency == $scope.contact.emergency || null;
 			$scope.contact.$save(function(contact, response) {
 				alertify.success('Ok');
+				$scope.contact = new Contact();
+			}, function(response) {
+				alertify.error(response.data);
 			});
 		};
 	}

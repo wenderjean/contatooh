@@ -1,7 +1,6 @@
 require('../vendor/angular');
 require('../vendor/angular-route');
 require('../vendor/angular-resource');
-require('../vendor/angular-breadcrumb/dist/angular-breadcrumb');
 
 $ = jQuery = require('../vendor/jquery/dist/jquery.min');
 require('../vendor/bootstrap/dist/js/bootstrap.min');
