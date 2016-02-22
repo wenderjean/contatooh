@@ -10,8 +10,8 @@ module.exports = function() {
 		callbackURL: 'http://localhost:3000/auth/github/callback',
 	}, function(accessToken, refreshToken, profile, done) {
 		User.findOrCreate(
-			{ "login" : profile.username},
-			{ "name" : profile.username},
+			{ "login" : profile.username },
+			{ "name" : profile.username },
 			function(err, user) {
 				if(err) {
 					console.error(err);

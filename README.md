@@ -5,7 +5,7 @@ This projects was based in "MEAN Book".
 
 ## Dependencies
 
-``NodeJS``
+``NodeJS``<br/>
 ``Bower``
 
 ## Persistence
@@ -14,9 +14,12 @@ This projects was based in "MEAN Book".
 
 ## Running (locally)
 
-``npm install``
-``bower install``
-``nodemon server.js``
+Set MONGO_URI ENV in your system<br/>
+``export MONGO_URI=mongodb://127.0.0.1/contatooh``<br/>
+
+``npm install``<br/>
+``bower install``<br/>
+``nodemon server.js``<br/>
 
 ## Running (docker)
 
