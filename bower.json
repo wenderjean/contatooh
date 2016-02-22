@@ -24,5 +24,8 @@
     "jquery": "~2.2.0",
     "alertify.js": "alertifyjs#~1.0.8",
     "bootstrap-social": "~4.12.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.5.0"
   }
 }
