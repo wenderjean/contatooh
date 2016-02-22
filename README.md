@@ -1,7 +1,7 @@
 # Contatooh
 
 A simple contact manager implemented MEAN Stack.<br/>
-This projects was based in "MEAN Book".
+This projects was based in "MEAN Book".<br/>
 
 ## Dependencies
 
@@ -16,7 +16,6 @@ This projects was based in "MEAN Book".
 
 ``export MONGO_URI=mongodb://127.0.0.1/contatooh``<br/>
 ``npm install``<br/>
-``bower install``<br/>
 ``nodemon server.js``<br/>
 
 ## Running (docker)

@@ -4,7 +4,8 @@
   "description": "Project based in MEAN Fullstack (book from Casa do Codigo)",
   "main": "server.js",
   "scripts": {
-    "start": "webpack --progress --colors --watch"
+    "start": "webpack --progress --colors --watch",
+    "postinstall" : "bower install"
   },
   "author": "Wender Freese",
   "license": "ISC",
