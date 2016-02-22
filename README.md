@@ -16,7 +16,8 @@ This projects was based in "MEAN Book".<br/>
 
 ``export MONGO_URI=mongodb://127.0.0.1/contatooh``<br/>
 ``npm install``<br/>
-``nodemon server.js``<br/>
+``npm run build``<br/>
+``npm start``<br/>
 
 ## Running (docker)
 
