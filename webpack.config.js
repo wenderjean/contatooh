@@ -1,7 +1,7 @@
 module.exports = {
 	entry: "./public/js/main.js",
 	output: {
-		path: "./public/js",
+		path: "./public/dist",
 		filename: "contatooh.min.js"
 	}
 };

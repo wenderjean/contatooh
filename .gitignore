@@ -1,4 +1,5 @@
 /node_modules
 /public/vendor
+/public/dist
 /public/js/contatooh.min.js
 .DS_store
