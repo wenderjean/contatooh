@@ -11,7 +11,7 @@ module.exports = function() {
 
   app.use(cookie_parser());
   app.use(session({
-      secret: 'man who sold the world',
+      secret: 'man_who_sold_the_world',
       resave: true,
       saveUninitialized: true
     })
