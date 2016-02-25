@@ -1,6 +1,16 @@
 nginx:
   image: nginx
   volumes:
-    - .:/usr/share/nginx/html
+   - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
   ports:
-    - "8080:80"
+   - "80:80"
+  links:
+   - application
+application:
+  build: container/.
+  environment:
+   - MONGO_URI=mongodb://mongo/contatooh
+  links:
+   - mongo
+mongo:
+  image: mongo
