@@ -12,17 +12,13 @@ This projects was based in "MEAN Book".<br/>
 
 ``MongoDB``
 
-## Running (locally)
+## Running
 
-``export MONGO_URI=mongodb://127.0.0.1/contatooh``<br/>
-``npm install``<br/>
-``npm run build``<br/>
-``npm start``<br/>
-
-## Running (docker)
-
+``sudo sh init.sh``
 ``docker-compose up``
+``Access http://dev.contatooh.net``
 
-## After Running
+## Considerations
 
-``Access http://localhost:3000/``
+init.sh script will create an entry in /etc/hosts file, if you using docker-machine please change the address inside
+this script before run.
