@@ -14,8 +14,8 @@ This projects was based in "MEAN Book".<br/>
 
 ## Running
 
-``sudo sh init.sh``
-``docker-compose up``
+``sudo sh init.sh``<br/>
+``docker-compose up``<br/>
 ``Access http://dev.contatooh.net``
 
 ## Considerations
