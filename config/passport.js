@@ -7,7 +7,7 @@ module.exports = function() {
 	var Strategy = new GitHubStrategy({
 		clientID: '6c20b32efbe213a92650',
 		clientSecret: '36f5754f09f7b97fcdd4a31577a427ccd9ca678e',
-		callbackURL: 'http://dev.contatooh.net:3000/auth/github/callback',
+		callbackURL: 'http://dev.contatooh.net/auth/github/callback',
 	}, function(accessToken, refreshToken, profile, done) {
 		User.findOrCreate(
 			{ "login" : profile.username },
