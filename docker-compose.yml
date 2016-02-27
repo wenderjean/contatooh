@@ -7,7 +7,7 @@ nginx:
   links:
    - application
 application:
-  build: container/.
+  build: .
   environment:
    - MONGO_URI=mongodb://mongo/contatooh
   links:
