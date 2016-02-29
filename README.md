@@ -20,5 +20,5 @@ This projects was based in "MEAN Book".<br/>
 
 ## Considerations
 
-The `init.sh` script will create an entry in /etc/hosts file, if you using docker-machine please change the ip address inside
+The `init.sh` script will create an entry in /etc/hosts file, if you using docker-machine please change the ip address
 inside that script before run.
